@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Process Tracking System</title>
+
+<style type="text/css">
+body{margin:0px; padding:0px;}
+.process-header{width:100%; margin:auto; height:100px; background:#EFEFEF;}
+.process-header-insi{width:860px; margin:auto; height:90px;}
+.process-header-logo{ width:200px; height:80px; padding-top:10px; padding-left:10px; float:left;}
+.process-header-right{width:640px; font-family:Tahoma, Geneva, sans-serif; height:60px; float:left; margin-top:25px; text-align:center;}
+.process-header-right h2{font-size:20px; color:#2e3192;}
+
+.process-header-contnt{width:860px; margin:auto;}
+.frmde{width:300px; margin:auto; margin-top:30px;}
+
+
+
+
+/*horizotally menu*/
+
+.t_menu{width:100%; margin:auto; height:30px; border-bottom: 1px solid #BBB; border-top: 1px solid #BBB;}
+
+.wireframeauramenu{
+
+width: 540px;
+margin:auto;
+margin-top:5px;
+
+}
+
+.wireframeauramenu ul{
+
+padding:0;
+margin: 0;
+text-align: left; 
+overflow: hidden;
+}
+
+.wireframeauramenu ul li{
+display: inline;
+}
+
+.wireframeauramenu ul li a{
+color:#666;
+
+padding: 0px 12px 12px 6px;
+margin: 0px 40px 6px 0px;
+text-decoration: none;
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+
+
+}
+
+.wireframeauramenu ul li a:hover{
+color: black;
+background: transparent url(<?php echo imagepathrestriction(SITE_PATH_All_Files.'\media\lightyellow.gif'); ?>) center center no-repeat; /*background of menu item onMouseover*/
+}
+
+/* horizotally menu closed */
+
+.fst_box{border:1px solid #999; color:#666;}
+.user-table{width:100%; font-family:Arial, Helvetica, sans-serif; color:#666; font-size:14px;}
+.buttn{width:70px; height:24px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#fff; background:url(<?php echo imagepathrestriction(SITE_PATH_All_Files.'\images\button.png'); ?>); border:0px; }
+
+.user-f{width:300px; margin:auto; text-align:center;}
+.user-f h2{color:#2e3192; font-size:18px; font-family:Arial, Helvetica, sans-serif; margin-top:80px;}
+.footer{width:100%; text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000; background:url(images/bg-header.jpg); background-repeat:repeat-x; height:100px; padding-top:10px; margin-top:70px; border-top: 1px solid #BBB;}
+.footer a{color:#000; text-decoration:none; line-height:140%;}
+
+.Wrong-pass
+{
+	width:100%; float:left; height:20px; margin-top:12px; color:#c20000; font-size:11px; padding-top:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="process-header">
+	<div class="process-header-insi">
+		<div class="process-header-logo"><img src="<?php echo imagepathrestriction(SITE_PATH_All_Files.'\images\logo-1.png'); ?>" alt="" /></div>
+			<div class="process-header-right"><h2>PROCESS TRACKING SYSTEM</h2></div>
+
+
+	</div>
+    </div>
+    
+    
+    
+    
+<div class="process-header-contnt">
+  <div class="user-f "><h2>Login</h2></div>
+    	<div class="frmde">
+		<fieldset>
+		<form action="" method="post" name="form1" >
+        <table  border="0" cellpadding="5" cellspacing="0" class="user-table" >
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="80">Username</td>
+    <td width="275"><label for="textfield"></label>
+	<input type="text" class="fst_box"  name="myusername" class="fst_box"  />
+      </td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td><input  type="password" class="fst_box" name="mypassword" class="fst_box"  /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" value="Login" name="bsubmit" class="buttn" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</form>
+</fieldset>        
+    <div class="Wrong-pass">
+	<?php echo $this->error; ?>
+	</div>    
+</div>
+    
+    <div style="clear:both;"></div>
+    </div>
+    <div class="footer">
+<a href="/privacy.html">Privacy Policy</a> | <a href="/legal.html">Legal   Statements</a> | <a href="/resources.html">Resources</a> | <a href="http://blogs.cyfuture.com/">Blogs</a> <br />
+Copyright&copy; 2012 All rights   Reserved at Cyber Futuristics (India) Pvt. Ltd. <br />
+Website Design and Developed   by <a href="/">Cyber Futuristics</a></></div>
+</body>
+</html>

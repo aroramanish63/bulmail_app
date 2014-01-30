@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	 <head>
+		 <meta charset="utf-8">
+	 <title>jQuery UI Slider - Range slider -negative</title>
+		 <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js"></script>
+		 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.js"></script>
+	 <style>
+			 #text_price {
+				 padding-bottom:5px;
+			 }
+			 #text_price span {color:#f6931f; font-weight:bold
+		 }
+		 </style>
+		 <script>
+		 $(function () {
+			 $("#slider-range").slider({
+				 range: true,
+				 min: -500,
+				 max: 0,
+				 values: [-300,-75],
+				 slide: function (event, ui) {
+					 $("#amount_1").val(-ui.values[0]);
+						 $("#amount_2").val(-ui.values[1]);
+					 $("#amount_1_show").text(-ui.values[0]);
+					 $("#amount_2_show").text(-ui.values[1]);
+					 },
+					 create: function(event, ui) {
+					 $("#amount_1").val(      -$(this).slider("values", 0));
+					 $("#amount_2").val(      -$(this).slider("values", 1));
+					 $("#amount_1_show").text(-$(this).slider("values", 0));
+						 $("#amount_2_show").text(-$(this).slider("values", 1));
+					 }
+				 });
+		 });
+		 </script>
+	 </head>
+	 <body>
+		 <div class="demo" style="width:300px;position:absolute;font-size:12px;">
+		 <div id="text_price">Price range: 
+				 <span id="amount_1_show"></span> -
+				 <span id="amount_2_show"></span>
+		 </div>
+		 <input type="hidden" id="amount_1" value="75" />
+		 <input type="hidden" id="amount_2" name="300" />
+		 <div id="slider-range"></div>
+		 </div>
+	 </body>
+
+</html>

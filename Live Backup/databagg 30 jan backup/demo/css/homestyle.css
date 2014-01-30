@@ -1,0 +1,120 @@
+.home_fixedheader
+	{
+	#background-color:#006699;
+	background-color:#004284;
+	}
+
+
+.home_innerarea
+	{
+	min-width:780px;max-width:1200px;margin:0 auto;height:100%;
+	}
+
+.home_layer0
+	{
+	#background-color:#0084c4;
+	background-color:#0058B0;
+	}
+
+.home_layer1
+	{
+	#background-color:#00A4F2;
+	background-color:#0068D7;
+	}
+
+
+.home_layer2
+	{
+	#background-color:#00A4F2;
+	background-color:#3595FF;
+	}
+
+
+.home_layer3
+	{
+	#background-color:#00A4F2;
+	background-color:#C1DFFF;
+	}
+
+
+.signupform_heading
+	{
+	font-size:14pt;
+	font-family:arial;
+	font-weight:bold;
+	color:#fff;
+	background-color:#0058B0;
+	}
+
+
+.signupform_txtbox
+	{
+	width:100%;
+	height:30px;
+	border:1px solid #aaa;
+	font-size:14pt;
+	font-family:arial;
+	}
+
+.signupform_caption
+	{
+	font-family:arial;
+	font-size:14pt;
+	color:#999999;
+	}
+
+.signupform_container
+	{
+	width:60%;
+	margin:0 auto;
+	background-image:url('../newimages/rounded.png');
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	padding:20px;
+	}
+
+.loginform_container
+	{
+	width:100%;
+	margin:0 auto;
+	background-image:url('../newimages/rounded.png');
+	background-size:100% 100%;
+	padding:20px;
+	}
+
+.signupform_but
+	{
+	width:100%;
+	height:40px;
+	background-color:#ffcc66;
+	color:#000;
+	font-size:20pt;
+	font-weight:bold;
+	border:1px outset #fff;
+
+	}
+
+.home_mainlinks a:link
+	{
+	font-family:arial;font-size:16pt;color:#fff;text-decoration:none;
+	}
+
+.home_mainlinks a:visited
+	{
+	font-family:arial;font-size:16pt;color:#fff;text-decoration:none;
+	}
+
+.home_mainlinks a:hover
+	{
+	font-family:arial;font-size:16pt;color:#fff;text-decoration:none;
+	border-left-width:0px;
+	border-right-width:0px;
+	border-top-width:0px;
+	border-bottom-width:2px;
+	border-style:solid;
+	border-color:orange;
+	}
+
+.home_footerlinks a:link{font-family:arial;font-size:10pt;text-decoration:none;color:cyan}
+.home_footerlinks a:visited{font-family:arial;font-size:10pt;text-decoration:none;color:cyan}
+.home_footerlinks a:hover{font-family:arial;font-size:10pt;text-decoration:none;color:yellow}

@@ -1,0 +1,84 @@
+<?php
+
+if(isset($this->users))
+ {
+   $datas = $this->users;
+   $datass = $datas[0];
+	$Id = $datass['Id'];
+	$Name = $datass['Name'];
+	$Username = $datass['Username'];
+	$Password = $datass['Password'];
+	$UserType = $datass['UserType'];
+	$IsActive = $datass['IsActive'];
+ }
+?>
+<script lanuage="javascript">
+function checks(sss,ssid)
+ {
+  var sssval = sss.value;
+  var sssActive;
+
+if(sss.checked==true)
+ {
+   sssActive=1;
+ }
+ else
+ {
+   sssActive=0;
+ }
+ 
+ //alert(ssid);
+  
+ window.location.href='<?php echo SITE_URL_PUBLIC_P; ?>main/processes/processesassignprocess/PUId/<?php echo $Id; ?>/ProcessId/'+sssval+'/Active/'+sssActive+'/UserProcessId/'+ssid;
+ }
+</script>
+<table width="100%" style="text-align:left;">
+<tr>
+  <th width="13%">Name</th>
+  <td width="87%"><?php echo $Name; ?></td>
+</tr>
+
+<tr>
+  <th>Username</th>
+  <td><?php echo $Username; ?></td>
+</tr>
+
+
+<tr>
+ <th colspan="2">Process List</th>
+</tr>
+<tr>
+ <td colspan="2">
+ <table width="100%">
+<?php
+$sn=0;
+foreach($this->processeslist as $valss)
+ {
+?>
+<tr> 
+ <td width="11%">
+ <?php
+ foreach($this->userprocesses as $valsss123)
+  {
+   if($valsss123->getUserId()==$Id)
+   {
+     if($valsss123->getProcessId()==$valss->getId())
+	  {
+	   $PPPID =  $valsss123->getProcessId();
+	    $UPID =  $valsss123->getId();
+		$IsActive =  $valsss123->getIsActive();
+	  }
+    }
+  }
+ ?>
+
+ <input type="checkbox" id="sprocess<?php echo $sn; ?>" name="sprocess<?php echo $sn; ?>" value="<?php echo $valss->getId(); ?>" onclick="return checks(this,'<?php if($PPPID==$valss->getId()) { echo $UPID; } ?>');" <?php if($PPPID==$valss->getId()) { if($IsActive==1) { ?> checked="checked" <?php } } ?> />
+ 
+ </td>
+ <td width="89%"><?php echo $valss->getName(); ?></td>
+</tr>
+<?php $sn++; } ?>
+</table>
+</td>
+</tr>
+</table>

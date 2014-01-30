@@ -1,0 +1,97 @@
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sf-menu li {
+	position: relative;
+	float:left; padding:11px 25px 10px 25px;
+}
+.sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+}
+.sf-menu > li {
+	float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}
+
+
+/*** DEMO SKIN ***/
+.sf-menu {
+	float: left;
+	
+}
+
+.sf-menu a {
+	color: #13a;
+}
+.sf-menu li {
+	/*background:url(../images/dividerbg.jpg) right 2px no-repeat;*/
+	white-space: nowrap; /* no need for Supersubs plugin */
+	*white-space: normal; /* ...unless you support IE7 (let it wrap) */
+	-webkit-transition: background .2s;
+	transition: background .2s;
+}
+.sf-menu li a {font-family: 'PTSansBold'; color:#FFF; font-size:17px; text-decoration:none; text-transform:uppercase;  }
+.sf-menu li a:hover {}
+.sf-menu ul li {
+	
+	color:#FFF;
+	width:100%;
+	padding:8px 0 8px 0px;
+	margin:0;
+	height:22px;
+	border-bottom:1px dashed #666666;
+	background:none;
+	width:200px;
+	border-left:none;
+	
+}
+.sf-menu ul { padding:15px !important; background:#17396b; width:200px; }
+.sf-menu ul li a{ color:#FFF; padding:0 0 0 15px;  font-family: 'PTSansRegular'; font-weight:normal; text-transform:none;}
+.sf-menu li ul li:hover{background:#ffc852; color:#fff;}
+.sf-menu ul li a:hover { color:#FFF;}
+.sf-menu ul ul li {
+	
+}
+
+.sf-menu li ul li.sfHover {
+	/*background:url(../images/navhov.jpg) left 5px no-repeat ;*/
+	/* only transition out, not in */
+	-webkit-transition: none;
+	transition: none;
+}
+
+         .multiselect {
+            height:8em;
+            border:solid 1px #c0c0c0;
+            overflow:auto;
+        }
+
+        .multiselect label {
+            display:block;
+            margin-bottom: 0;
+        }
+
+        .multiselect-on {
+            color:#ffffff;
+            background-color:#00ACE4;
+        }
+

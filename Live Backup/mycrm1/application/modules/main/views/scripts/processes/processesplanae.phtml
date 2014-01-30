@@ -1,0 +1,79 @@
+<?php
+
+
+if(isset($this->processplan))
+ {
+  $processplan = $this->processplan;
+  $processplan =  $processplan[0]; 
+  $Id = $processplan->Id;
+  $Title = $processplan->Title;
+  $Price = $processplan->Price;
+  $Currency = $processplan->Currency;
+  $Description = $processplan->Description;
+  $IsActive = $processplan->IsActive;
+ }
+?>
+
+<script type="text/javascript">
+	
+	function validate(evt) {
+
+  var regex =  /^((\d+(\.\d*)?)|((\d*\.)?\d+))$/;
+  if(!regex.test(evt) ) {
+  document.getElementById('Price').value = '';
+  }
+}
+
+
+</script>	
+
+ <div class="user-f "><h2>Plan</h2></div>
+    	<div class="frmde">
+<form action="<?php echo $this->action; ?>" method="post">
+<input type="hidden" id="Id" name="Id" value="<?php echo $Id; ?>" />
+<input type="hidden" id="ProcessId" name="ProcessId" value="<?php echo $this->processid; ?>" />
+<table border="0" cellpadding="5" cellspacing="0" class="user-table">
+ <tr>
+   <th>Title</th>
+   <td><input type="text" id="Title" name="Title" value="<?php echo $Title; ?>" class="fst_box"  /></td>
+ </tr>
+
+ <tr>
+   <th>Price</th>
+   <td><input type="text" id="Price" name="Price" value="<?php echo $Price; ?>" onkeypress='validate(this.value)' class="fst_box"  /></td>
+ </tr>
+ 
+  <tr>
+   <th>Currency</th>
+   <td>
+   <select id="Currency" name="Currency" class="fst_box" >
+   <option value="">Select</option>
+   <option <?php if($Currency=='USD') { ?> selected="selected" <?php } ?> value="USD">USD</option>
+   <option <?php if($Currency=='EURO') { ?> selected="selected" <?php } ?>  value="EURO">EURO</option>
+   <option <?php if($Currency=='INR') { ?> selected="selected" <?php } ?>  value="INR">INR</option>
+   <option <?php if($Currency=='GBP') { ?> selected="selected" <?php } ?>  value="GBP">GBP</option>
+   </select>
+  </td>
+ </tr>
+
+
+ <tr>
+   <th>Description</th>
+   <td><textarea id="Description" name="Description" class="fst_box" ><?php echo $Description; ?></textarea></td>
+ </tr>
+
+
+ <tr>
+   <th>Active</th>
+   <td><input type="checkbox" id="IsActive" name="IsActive" <?php if($IsActive==1) { ?> checked="checked" <?php } ?> value="1" /></td>
+ </tr>
+ 
+  <tr>
+   <td colspan="2" align="center"><input type="submit" id="bsubmit" name="bsubmit" value="Enter" class="buttn"  /></td>
+ </tr>
+
+ 
+</table>
+</form>
+
+</div>

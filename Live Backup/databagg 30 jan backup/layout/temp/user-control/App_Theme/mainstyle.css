@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{margin:0px; padding:0px; background-image:url(../images/batabagbg.jpg); background-repeat:no-repeat; background-position:center 0px;}
+
+.mainpageheader{width:1000px; height:797px; margin:auto;}
+.databag-menu{width:1000px; height:208px; margin-top:7px;}
+
+.databag-banner{width:1000px; height:461px; margin:auto;}
+.databag-bdownload{width:1000px; height:120px; padding-top:10px;}
+.databag-bdownloadimg{width:310px; height:92px;  margin:auto; background:url(../images/download.jpg);}
+.databag-bdownloadimg:hover{width:310px;  height:92px; margin:auto; background:url(../images/download-hover.jpg);}
+
+
+.databag-menu-left{width:347px; height:208px; float:left; background:url(../images/databagleft.png); background-repeat:no-repeat;}
+.databag-menu-middle{width:303px; height:208px; float:left; background:url(../images/logodatabg.png); background-repeat:no-repeat;}
+.databag-menu-right{width:350px; height:208px; float:left; background-image:url(../images/databagright.png);background-repeat:no-repeat;}
+
+.contentdata{width:100%; height:650px; font-family:Arial, Helvetica, sans-serif; background:url(../images/cont-img.jpg); background-repeat:repeat-x;}
+
+
+.contentdata-text{width:914px; margin:auto; font-family:Arial, Helvetica, sans-serif; padding:39px 0px 20px 0px;}
+.contentdata-cloud-one{width:912px; margin:auto; height:450px;}
+.contentdata-cloud-one-t{width:912px; background:url(../images/cloudstop.jpg); height:59px;}
+
+.contentdata-cloud-one-b{width:912px; background:url(../images/cloudsbottom.jpg); height:22px;}
+
+.contentdata-cloud-one-m{width:912px; background:url(../images/cloudsmiddle.jpg); background-repeat:repeat-y;}
+
+.contentdata-cloud-one-m-c{width:785px; height:352px; margin:auto;}
+        
+		
+		 .bag-one-l{width:251px; height:340px; float:left;}    
+		  .bag-one-l h2{width:175px; font-size:30px; font-family:"GeoSlab703 MdCn BT"; color:#03759f; padding:0px;  margin:4px 0px 0px 10px;}
+		  .bag-one-l p{width:189px; text-align:center; margin:4px 0px 0px 0px; font-size:13px; font-family:"PT Sans"; color:#666;}
+		  
+		  .bag-one-m{width:280px; height:340px; float:left;}    
+		 .bag-one-m h2{width:160px; font-size:30px; font-family:"GeoSlab703 MdCn BT"; color:#03759f; padding:0px; margin:4px 0px 0px 40px;}
+		  .bag-one-m p{width:189px; text-align:center;  font-size:13px; margin:4px 0px 0px 25px; font-family:"PT Sans"; color:#666;}
+		  
+		  .bag-one-r{width:240px; height:340px; float:left;}    
+		  .bag-one-r h2{width:238px; text-align:center; font-size:30px; font-family:"GeoSlab703 MdCn BT"; color:#03759f; padding:0px;  margin:auto;}
+		  .bag-one-r p{width:200px; text-align:center; font-size:13px; margin:auto; font-family:"PT Sans"; color:#666;}
+          
+
+.headerdata{width:953px; margin:auto; height:92px;}
+
+
+.text{width:888px; font-family:"PT Sans"; font-size:15px; color:#fff;  margin:auto;}
+
+.text p{line-height:20px;
+text-align: center;    
+/*text-shadow: 1px 1px 0px #024159;
+filter: dropshadow(color=#024159, offx=1, offy=5;*/}
+
+.underlinemenu-left{width:320px; margin-top:83px; margin-left:20px;}
+.underlinemenu-right{width:320px; margin-left:4px;}
+.underlinemenu-right-top{width:320px; margin-left:4px; height:83px;}
+.login{width:81px; height:36px; float:left; margin-left:143px; margin-top:19px;}
+.loginsign{width:91px; height:36px; float:left; margin-left:5px; margin-top:19px;}
+
+
+.underlinemenu{
+width:315px;
+}
+
+.underlinemenu ul{
+margin:0px;
+
+padding:0px;
+float: left;
+font-weight: bold;
+
+
+}
+/*
+* html .underlinemenu ul{ IE only rule. Delete extra margin-bottom
+margin-bottom: 0;
+}*/
+
+.underlinemenu ul li{
+display: inline;
+float: left;
+
+}
+
+
+.underlinemenu ul li a{
+margin:2px 0px 0px 2px;
+float: left;
+color: #fff;
+padding: 2px 15px 0px 20px;
+text-decoration: none;
+background:url(../images/borderright.png); background-repeat:no-repeat;
+
+font-family:"GeoSlab703 Md BT";
+font-size:20px;
+text-transform:uppercase;
+height:30px;
+
+
+}
+
+
+.underlinemenu ul li a:hover{
+color: #fff; border-bottom: 6px solid #03759f;
+
+}
+
+.footer{width:100%; margin-top:10px; height:165px;}
+.footer-in-top{width:914px; height:140px; margin:auto;}
+
+.footer-in-top ul{width:115px; float:left;}
+.footer-in-top ul li{padding:0px; margin:4px 0px 0px 0px; list-style:none; font-family:"PT Sans", "PT Sans Narrow"; font-size:13px; color:#03759f;}
+.footer-in-top ul li strong{padding:0px; margin:0px; font-weight:bold; font-family:"PT Sans";  font-size:18px; color:#000;}
+.footer-in-top ul li a{color:#03759f; text-decoration:none; padding-top:10px; font-size:13px;}
+.social-media{width:220px; height:92px; float:left; margin-left:205px;}
+.social-media h2{font-family:"PT Sans"; font-size:18px; color:#000;}
+.social-media-t{width:240px; height:41px;}
+
+
+.social-media-t-l{width:104px; height:39px; float:left;}
+.social-media-t-l-img{width:39px; height:39px; float:left;}
+.social-media-t-l-text{width:65px; padding-top:5px; height:34px; float:left; font-family:"PT Sans", "PT Sans Narrow"; font-size:13px; color:#03759f;}
+.social-media-t-r{width:104px; height:39px; float:left; margin-left:20px;}
+.social-media-b{width:240px; height:41px;}
+
+.footer-in-bottom{width:914px; border-top:1px dotted #666; height:40px; margin:auto; font-family:"PT Sans", "PT Sans Narrow"; font-size:13px; color:#666666;}
+
+.textfooter{width:500px; float:left; margin-top:16px;}
+.textfooter a{color:#819c06; text-decoration:none;}
+.textfooter strong{color:#819c06;}
+.textfooterimg-right{width:165px; float:right; padding-top:8px;}

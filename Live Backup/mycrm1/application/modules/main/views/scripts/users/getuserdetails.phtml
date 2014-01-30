@@ -1,0 +1,97 @@
+<?php
+$calltype = array('select'=>'Select','1'=>'Sales','2'=>'Support','3'=>'Inquiry');
+
+$disposition = array('select'=>'Select','1'=>'Sale','2'=>'No Sale','3'=>'Wrong Number','4'=>'No Answer','5'=>'Promise to Buy','6'=>'Refund Request-Product','7'=>'Request- Subscription');
+
+
+?>
+
+<div style="padding:5px;font-family:Verdana;">
+<span><a href="#" onclick="javascript:document.getElementById('dt_example').style.opacity='1.0';document.getElementById('sdetails').style.display='none';document.getElementById('hide'+<?php echo $this->shid; ?>).style.display='none';document.getElementById('show'+<?php echo $this->shid; ?>).style.display='block';" style="color:#000000;text-decoration:none;">Close &nbsp; &times;</a></span>
+</div>
+  <table width="100%" style="border:1px solid #cccccc;text-align:center;">
+	 <tr bgcolor="#cccccc">
+		<th>#</th>
+		<th>Process</th>
+		<th>Call <br />Type</th>
+		<th>Disposition</th>
+		<th>Plan</th>
+		<th>Amount (Sales)</th>
+		<th>Issues</th>
+		<th>Solutions</th>
+		<th>Agent</th>
+		<th>Call <br />Date</th>
+		<th>Start <br />Time</th>
+		<th>End <br />Time</th>
+		<th>Time <br />Difference</th>
+      </tr>
+	  
+	  <?php 
+	  
+	  $snn=1;
+	  foreach($this->userdetails as $udl) {
+	  
+	  if($udl->Customerid==$this->customerid) {
+	   ?>
+	  <tr  bgcolor="#FFFFFF">
+	  <td><?php echo $snn; ?></td>
+   <td><?php
+   foreach($this->processes as $processes)
+    {
+   if($processes->Id==$udl->Processid)
+
+
+
+    echo $processes->Name; 
+	}
+	?></td>
+   <td><?php
+   foreach($calltype as $key=>$vals)
+   {
+     if($key==$udl->Calltype)
+	 {
+       echo $vals;
+     }
+   }
+    ?></td>
+	
+	   <td><?php
+	  
+   foreach($disposition as $key=>$vals)
+   {
+     if($key==$udl->Disposition)
+	 {
+       echo $vals;
+     }
+   }
+    ?></td>
+    <td><?php 
+		foreach($this->processplanlist as $vvv)
+			 {
+			   if($udl->Planid==$vvv->Id)
+			   {
+		        echo $vvv->Title.' ( '.$vvv->Price.' ) ';  
+			   }
+			 }
+	
+	 ?></td>	
+   <td><?php echo $udl->Salesamount; ?></td>
+   <td><?php echo $udl->Issues; ?></td>
+   <td><?php echo $udl->Solutions; ?></td>
+   <td><?php
+   foreach($this->users as $uuu)
+    {
+	if($uuu->Id==$udl->Userid)
+	{
+     echo $uuu->Name; 
+    }
+   }
+   ?></td>
+   <td><?php echo $udl->Calldate; ?></td>
+   <td><?php echo date("Y-m-d H:i:s",$udl->Starttime); ?></td>
+   <td><?php echo date("Y-m-d H:i:s",$udl->Endtime); ?></td>
+   <td><?php echo round($udl->Endtime-$udl->Starttime,3); ?></td>
+ </tr>
+ <?php $snn++; } } ?>
+	</table>
+   

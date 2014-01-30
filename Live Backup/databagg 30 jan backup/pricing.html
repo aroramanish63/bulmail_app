@@ -1,0 +1,157 @@
+<?php
+session_start();
+unset($_SESSION['planid']);
+?>
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Databagg</title>
+
+<link href="App_Theme/mainstyle.css" rel="stylesheet" type="text/css" />
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="mainpageheader">
+<?php include('topmenu.html');?> 
+  <div class="other-content">
+  <div class="other-content-top"></div>
+    <div class="other-content-middle">
+   <div class="avail"><img src="images/avail.png" width="941" height="87" alt="" /></div>
+   <div class="freetrial">
+    
+    	<div class="freetrial-left-pricing">
+        
+        <h2>Personal</h2>
+       
+       <div class="pricing-new-top"></div>
+       <div class="pricing-new-middle">
+       
+       <div class="freetrial-right-pricing-clmun-o">
+       <div align="center" class="gbspace">
+          <img src="images/100gb.png" alt="" /></div>
+          <div class="gbspace-price">
+          
+         <span><input name="" type="radio" value="" /></span>&nbsp;$7.95/&nbsp;<span>Monthly</span>
+         <br /><br />
+         <span><input name="" type="radio" value="" /></span>&nbsp;$79.95/<span>Yearly</span>
+         
+          </div>
+                   
+        
+         <a href="confirm_plan.php?planid=2"><div class="buynowln"></div></a>
+          
+          </div>
+       	<div class="freetrial-right-pricing-clmun-t">
+        
+        <div align="center" class="gbspace">
+          <img src="images/250gb.png" alt="" /></div> 
+        <div class="gbspace-price">
+          
+         <span><input name="" type="radio" value="" /></span>&nbsp;$16.95/<span>Monthly </span><br /><br />
+         
+           <span><input name="" type="radio" value="" /></span>&nbsp;$169.95/<span>Yearly</span>
+          </div>
+       
+            <a href="confirm_plan.php?planid=4"><div class="buynowln"></div></a>
+          
+          
+          
+     
+        </div>
+        
+        <div class="freetrial-right-pricing-clmun-th">
+        <div align="center" class="gbspace">
+          <img src="images/500gb.png" alt="" /></div>
+        
+        <div class="gbspace-pricen">
+         
+         <span><input name="" type="radio" value="" /></span>&nbsp;$29.95/<span> Monthly</span><br /><br />
+         
+         <span><input name="" type="radio" value="" /></span>&nbsp;$299.95/<span>Yearly</span>
+          </div>
+          
+        
+         
+          <div class="buynowln"><a href="confirm_plan.php?planid=6"><img src="images/upgrade.png" alt="" border="0" /></a></div>
+          
+          
+        
+        </div>
+       
+       
+       </div>
+       <div class="pricing-new-bottom"></div>
+       
+        <div style="clear:both"></div>
+        </div> 
+        	
+            
+            <div class="freetrial-right-pricing">
+               <h2>Small Business</h2>
+               <div class="h2last">Enterprise</div>
+               
+          <div class="freetrial-right-pricing-top"></div>
+          <div class="freetrial-right-pricing-middle"> 
+          <div class="freetrial-right-pricing-clmun-ol">
+          
+          <div align="center" class="gbspace">
+          <img src="images/5tb.png" alt="" /></div>
+        
+        <div class="gbspace-price">
+          
+         <span><input name="" type="radio" value="" /></span>&nbsp;$69.95/<span>Monthly</span><br />
+         <br />
+          <span><input name="" type="radio" value="" /></span>&nbsp;$699.95/<span>Yearly</span>
+          </div>
+        
+        
+        <div class="buynowln"><a href="confirm_plan.php?planid=8"><img src="images/upgrade.png" alt="" border="0" /></a></div>
+         
+          
+    
+          
+          
+          </div>
+       	<div class="freetrial-right-pricing-clmun-t">
+       	  <div align="center" class="gbspace">
+          <img src="images/unlimiteso-off.png" alt="" /></div>
+        
+        <div class="gbspace-priceth">
+         
+         <span><input name="" type="radio" value="" /></span>&nbsp;$99.95/<span>/Monthly</span><br /><br />
+        <span><input name="" type="radio" value="" /></span>&nbsp;$999.95<span>/Yearly</span>
+          </div>
+        
+       
+         <div class="buynowln"><a href="confirm_plan.php?planid=10"><img src="images/upgrade.png" alt="" border="0" /></a></div>
+
+          
+         </div>
+      
+       </div>
+          <div class="freetrial-right-pricing-bottom"></div>
+            <div style="clear:both"></div>
+            </div>
+    
+    </div>
+   <div style="clear:both"></div>
+    </div>
+    <div class="other-content-bottom"></div>
+    <div style="clear:both"></div>
+  
+  </div>
+  
+  
+	
+    <div style="clear:both"></div>
+</div>
+
+ <?php include('calling.html');?>
+ <?php include('footer.html');?>
+ <?php include('bottom.html');?>
+
+</body>
+</html>

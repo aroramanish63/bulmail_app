@@ -1,0 +1,208 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+@font-face {
+	font-family: 'geoslab703_md_btbold';
+	src: url('../fonts/tt0310m-webfont.eot');
+	src: url('../fonts/tt0310m-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/tt0310m-webfont.woff') format('woff'),  url('../fonts/tt0310m-webfont.ttf') format('truetype'),  url('../fonts/tt0310m-webfont.svg#geoslab703_md_btbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'PTSansRegular';
+    src: url('../fonts/pts55f_1.eot');
+    src: url('../fonts/pts55f_1.eot') format('embedded-opentype'),
+         url('../fonts/pts55f_1.woff') format('woff'),
+         url('../fonts/pts55f_1.ttf') format('truetype'),
+         url('../fonts/pts55f_1.svg#PTSansRegular') format('svg');
+}
+
+
+body {
+	margin: 0px !important;
+	padding: 0px !important;
+	background-color:#FFF;
+	 font-family: 'PTSansRegular';
+	font-style: normal;
+}
+*, * focus {
+	margin: 0;
+	outline: medium none;
+	padding: 0;
+}
+a, a img { outline:none; border:none;}
+.fileform_container { width:100%; background:url(../images/loginbg.png) #FFF no-repeat; float:left;}
+.midfile_wrap { width:1000px; margin:0 auto;}
+.midfile_wrap .logo { width:100%; text-align:center; padding:10px 0 20px 0; float:left;}
+.heading_content { width:100%; float:left;}
+.midfile_wrap h1 { font-size:32px; color:#0096cf; text-align:center; display:block; padding:0; margin:0; font-family: 'geoslab703_md_btbold';}
+.midfile_wrap h1  span { color:#5d5d5d; font-size:24px;}
+.fileform_section{ width:100%; float:left; padding:20px 0 50px 0; position:relative;}
+.form_topbg { width:100%; float:left;}
+.form_midbg { width:100%; float:left; background:url(../images/midbg.png) repeat-y;}
+.form_rightsection { width:772px; float:right; position:relative; z-index:2;}
+.form_contentcontainer { width:644px; float:left; margin:0 0 0 64px; }
+.form_contentcontainer label { font-size:18px; color:#4c4c4c; margin-top:15px;  font-family: 'PTSansRegular'; padding:0 0 10px 0; display:block;}
+.form_contentcontainer .inputbg, .form_contentcontainer2 .inputbg { width:622px; height:44px; background:url(../images/file_inputbg.jpg) no-repeat; border:none; color:#B8B8B8; font-size:16px;  font-family: 'PTSansRegular'; padding:0 10px 0 10px; }
+.form_contentcontainer textarea, .form_contentcontainer .inputbg2 { width:621px; height:141px; background:url(../images/testareabag.jpg) no-repeat; border:none; padding:10px 10px 0 10px;  font-size:18px;  font-family: 'PTSansRegular'; color:#B8B8B8; margin-bottom:10px; resize:none;}
+.nextbutton { border:none; width:86px; height:34px; margin:20px 0 0 278px; float:left; background-position:left top; background:url(../images/nextbutton.jpg);}
+.nextbutton:hover { background-position:left -34px; }
+.sendbutton { border:none; width:54px; height:34px; margin:20px 0 0 278px; float:left; background-position:left top; background:url(../images/butsend.png);}
+.sendbutton:hover { background-position:left -34px; }
+.submitbutton { border:none; width:68px; height:34px; margin:20px 0 0 278px; float:left; background-position:left top; background:url(../images/butsubmit.png);}
+.submitbutton:hover { background-position:left -34px; }
+.blue_contianer { background-color:#0096cf; width:238px; border-radius:5px 0px 0px 5px; float:left; position:absolute; z-index:1; height:415px; border:1px solid #007aa8;}
+.border_light {  width:236px; border:1px solid #70c4e4; float:left; border-radius:5px 0px 0px 5px; height:413px;}
+.blue_contianer h2 { font-size:30px; color:#FFF; font-family: 'geoslab703_md_btbold'; text-align:center; background:url(../images/dividerbg.jpg) bottom repeat-x; padding:40px 0 15px 0;  }
+.databgg_services { margin:0; padding:30px 0 0 0; }
+.databgg_services li { font-size:16px; color:#FFF; padding:10px 0 10px 20px;}
+.databgg_services li img { margin:2px 10px 0 0; }
+
+.form_contentstep2 { width:100%; float:left; line-height:35px; }
+.form_contentstep2 h3 { font-family: 'geoslab703_md_btbold';  color:#333; font-size:24px; font-weight:normal; padding:0 0 5px 0;  }
+.form_contentstep2 h3 span { color:#0096cf;}
+.form_userdetails h2 { font-family: 'geoslab703_md_btbold'; color:#0096cf; font-size:20px;  }
+.form_userdetails ul li { list-style:none; width:100%; float:left; padding:0 0 10px 0;}
+
+.butdownload a { width:86px; float:right; height:34px; background-position:left top; background:url(../images/but_downlaod.png); clear:right; margin:0 0 0 30px; }
+.butdownload a:hover { background-position:left -34px;}
+.link-expired {width:86px; float:right; height:34px; margin:0 0 0 20px; color:#333;}
+
+.myfile_rightoption
+{
+	width:auto; float:right; height:34px; margin:0 0 0 20px;
+}
+
+.myfile_rightoption2
+{
+	width:auto; float:right; height:34px; margin:0 0 0 20px; padding-top:4px;
+}
+
+.filename { width:350px; float:left;  overflow:hidden;}
+.filesize { width:80px; float:left; margin:0 0 0 20px; color:#fa3b00;}
+.filename2 { width:350px; float:left;  overflow:hidden; font-size:14px; line-height:20px; padding-top:6px; color:#0096CF; font-weight:bold;}
+.filename2 span{font-size:13px; color:#5D5D5D;}
+.sign_button {
+    float: right;
+   
+    width: auto;
+}
+.signin {
+    background:url(../images/butsignin.png);
+    float: left;
+    height: 30px;
+                background-position:left top;
+    width: 85px;
+                margin:10px 5px 0 0;
+}
+.signin:hover, .signup:hover { background-position:left -30px;}
+.signup {
+      background:url(../images/butsignup.png);
+    float: left;
+    height: 30px;
+    background-position:left top;
+    width: 85px;
+    margin:10px 0 0 0;
+}
+.topheader { width:100%; float:left;}
+.sign_button a { font-size:16px; color:#333; text-decoration:none; }
+.sign_button a:hover { color:#ff4800;}
+.topheaderright { width:auto; float:right; padding:10px 10px 0 0; text-align:right;}
+.userlogin { font-size:14px; color:#333;}
+.userlogin span { color:#0096cf; font-weight:bold;}
+
+.icon { float:left; width:35px; height:35px; padding:0 10px 0 0;}
+.icon img { min-width:35px; min-height:35px; max-width:35px; max-height:35px;}
+
+.leftcheckbox { float:left; width:auto; padding:10px 15px 0 0;}
+
+.icon2 { float:left; width:40px; height:40px; padding:4px 10px 0 0;}
+.icon2 img { min-width:40px; min-height:40px; max-width:40px; max-height:40px;}
+
+.icon-rightsign { float:left; width:30px; height:15px; padding:0 10px 0 0; margin-top:11px;}
+.icon-rightsign img { min-width:15px; min-height:15px; max-width:15px; max-height:15px;}
+
+
+.form_contentcontainer input.error{
+	background: #f8dbdb;
+	border-color: #e77776;
+}
+
+.form_contentcontainer textarea.error{
+	background: #f8dbdb;
+	border-color: #e77776;
+}
+
+.error{
+	color:#b94a48;
+	font-size: 14px;
+	font-weight:bold;
+}
+	
+.addmsgtext a { color:#0096CF; font-size:15px; text-decoration:none; cursor:pointer;  font-family: 'PTSansRegular'; }
+.addmsgtext a:hover { text-decoration:underline;}
+
+.MultiFile-list{ clear:both;}
+.MultiFile-label{ width:auto; margin:3px; padding:2px; border:1px solid #999; float:left;}
+.MultiFile-label a{text-decoration:none; color:#C00;}
+
+.form_contentcontainer .fileinput { width:622px; background:url(../images/file_inputbg.jpg) no-repeat; border:none; color:#B8B8B8; font-size:18px;  font-family: 'PTSansRegular'; padding:13px 10px 13px 10px;}
+
+.planclass{
+	margin-right:20px;
+}
+
+.deleteall{
+	 border:none; width:auto; padding:5px; height:30px; margin-top:4px; border-radius:5px; float:left; background:#0096CF; color:#FFF; background-position:left top;
+}
+
+.successdiv {
+    background-color: #84C22C;
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    border: 1px solid #7AB722;
+    color: #FFFFFF;
+    font-family: 'PT Sans',sans-serif;
+    font-size: 15px;
+    margin: 10px 0;
+    padding: 10px;
+    position: relative;
+    width: 619px;
+	text-align:center;
+}
+
+.errordiv {
+    background-color: #E85005;
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    border: 1px solid #d74a05;
+    color: #FFFFFF;
+    font-family: 'PT Sans',sans-serif;
+    font-size: 15px;
+    margin: 10px 0;
+    padding: 10px;
+    position: relative;
+    width: 619px;
+	text-align:center;
+}
+
+
+.form_contentcontainer2 .selectbox { width:295px; height:44px; background:url(../images/smallinput.jpg) no-repeat; border:none; color:#898989; font-size:17px; font-family: 'PT Sans', sans-serif; float:left; padding:0 10px 0 10px; margin-bottom:15px;}
+.form_contentcontainer2 .selectbox select { font-size:17px; font-family: 'PT Sans', sans-serif; color:#898989; background:none; border:none; width:290px; margin:10px 0 0 0;}
+.formfullrow { width:100%; float:left; margin:5px 0 5px 0;}
+.smallinputbox { width:315px; }
+.imagebox { width:130px;}
+.imagebox2 { width:150px;}
+.imagebox input, .imagebox2 input { margin-top:8px;}
+.fl { float:left;}
+.fr { float:right;}
+.form_contentcontainer2 .smallinput {width:295px; height:44px; background:url(../images/smallinput.jpg) no-repeat; border:none; color:#898989; font-size:17px; font-family: 'PT Sans', sans-serif; padding:0 10px 0 10px; margin-bottom:15px;}
+.form_contentcontainer2 .selectbox2 {width:125px; height:44px; background:url(../images/smallinput2.jpg) no-repeat; border:none; color:#898989; font-size:17px; font-family: 'PT Sans', sans-serif;  padding:0 10px 0 10px; margin-bottom:15px;}
+.fullformrow { width:100%; float:left;}
+
+.form_contentcontainer2 .selectbox2 select { font-size:17px; font-family: 'PT Sans', sans-serif; color:#898989; background:none; border:none; width:125px; margin:10px 0 0 0;}
+.fullformrow { width:100%; float:left; }
+
+.submit { border:none; width:67px; height:34px; margin:10px 0 0 207px; float:left; background-position:left top; background:url(../images/butsubmit.png);}
+.labeltext { width:172px; float:left; padding:0px 0 0 0;}
+.form_contentcontainer2 .smallinput2 {width:125px; height:44px; background:url(../images/smallinput2.jpg) no-repeat; border:none; color:#898989; font-size:17px; font-family: 'PT Sans', sans-serif; padding:0 10px 0 10px; margin-bottom:15px;}
+.formmidpanel { width:487px; margin:0 0  0 82px; float:left; }
+.form_contentcontainer2 label { font-size:16px; color:#4c4c4c; margin-top:14px;  font-family: 'PTSansRegular'; padding:0 0 10px 0; display:block;}

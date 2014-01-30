@@ -1,0 +1,12 @@
+<?php
+
+$arr = $this->arrPlanlist;
+$arrn = array();
+foreach($arr as $key=>$val)
+ {
+  $arrn1 = array("Val"=>$key,"Title"=>$val);   
+  array_push($arrn,$arrn1);
+ }
+
+echo json_encode($arrn);
+?>

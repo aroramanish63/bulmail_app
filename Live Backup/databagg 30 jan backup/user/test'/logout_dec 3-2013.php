@@ -1,0 +1,22 @@
+<?php
+session_start();
+session_destroy();
+//header("location:../login.php");
+
+?>
+<script>
+try
+{
+if(window.parent.window.menu.document.getElementById('wrapper').innerHTML!="")
+{
+window.parent.window.menu.document.getElementById('wrapper').innerHTML="";
+frameset=parent.document.getElementById("main");
+                            frameset.setAttribute("rows","0%,*");
+}
+window.parent.location.replace("../login.php");
+}
+catch(err)
+{
+  window.parent.location.replace("../login.php");  
+}
+</script>

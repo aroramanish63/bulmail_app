@@ -1,0 +1,1 @@
+[16-Oct-2012 16:11:55 UTC] PHP Fatal error:  Call to undefined function imagepathrestriction() in /home/askpcexp/public_html/mycrm/application/modules/index/views/scripts/index/index.phtml on line 59

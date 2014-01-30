@@ -1,0 +1,60 @@
+<?php
+
+if(isset($this->users))
+ {
+   $datas = $this->users;
+   $datass = $datas[0];
+	$Id = $datass['Id'];
+	$Name = $datass['Name'];
+	$Description = $datass['Description'];
+	$ProcessDate = $datass['ProcessDate'];
+	$IsActive = $datass['IsActive'];
+ }
+?>
+
+
+<script type="text/javascript">
+	window.onload = function(){
+		new JsDatePick({
+			useMode:2,
+			target:"ProcessDate",
+			dateFormat:"%Y-%m-%d"
+		});
+	};
+	
+	
+
+</script>	
+
+ <div class="user-f "><h2>Process</h2></div>
+    	<div class="frmde">
+<form action="<?php echo $this->actionc; ?>" method="post">
+<input type="hidden" id="Id" name="Id" value="<?php echo $Id; ?>" />
+<table width="70%">
+<tr>
+ <th>Name</th>
+ <td><input type="text" id="Name" name="Name" class="fst_box" value="<?php echo $Name; ?>" /></td>
+</tr> 
+
+<tr>
+ <th>Description</th>
+ <td><textarea id="Description" name="Description" class="fst_box"><?php echo $Description; ?></textarea></td>
+</tr> 
+
+<tr>
+ <th>ProcessDate</th>
+ <td><input type="text" id="ProcessDate" name="ProcessDate" value="<?php echo $ProcessDate; ?>" class="fst_box" readonly="readonly" placeholder="Click inside textbox to see calendar" style="width:160px;" /> &nbsp;<em>( yyyy-mm-dd )<img src="<?php echo SITE_URL_ALLFILES.'images/calendar_icon1.png'; ?>" height="20" width="20" onclick="javascript:document.getElementById('ProcessDate').click(true);document.getElementById('ProcessDate').click(true);" style="cursor:pointer;" /></em></td>
+</tr> 
+
+<tr>
+ <th>IsActive</th>
+ <td><input type="checkbox" <?php if($IsActive=="1") { ?> checked="checked" <?php } ?>   id="IsActive" name="IsActive" value="1" /></td>
+</tr> 
+
+
+<tr>
+  <td colspan="2" align="center"><input type="submit" id="bsubmit" name="bsubmit" value="Submit" class="buttn"  /></td> 
+</tr>
+</table>
+</form>
+</div>

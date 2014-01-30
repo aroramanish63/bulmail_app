@@ -1,0 +1,1 @@
+[16-Oct-2012 15:29:58 UTC] PHP Fatal error:  Using $this when not in object context in /home/askpcexp/public_html/mycrm/application/modules/main/views/scripts/users/userae.phtml on line 3

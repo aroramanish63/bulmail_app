@@ -1,0 +1,439 @@
+<?php
+
+
+$calltype = array('0'=>'Select','1'=>'Sales','2'=>'Support','3'=>'Inquiry');
+
+$disposition = array('0'=>'Select','1'=>'Sale','2'=>'No Sale','3'=>'Wrong Number','4'=>'No Answer','5'=>'Promise to Buy','6'=>'Refund Request-Product','7'=>'Request- Subscription');
+
+$paymentgateway = array('0'=>'Select','1'=>'Avangate', '2'=>'Safecart', '3'=>'Clever Bridge');
+		
+
+
+$DateFrom = $this->DateFrom;
+$DateTo = $this->DateTo;
+$FirstName = $this->FirstName;
+$MiddleName = $this->MiddleName;
+$LastName = $this->LastName;
+$PhoneNumber = $this->PhoneNumber;
+$Email = $this->Email;		
+$Processid = $this->Processid;
+$bsubmit = $this->bsubmit;
+$Calltype = $this->Calltype;
+$Disposition = $this->Disposition;
+$Planid = $this->Planid;
+$Salesamount = $this->Salesamount;
+$Issues = $this->Issues;
+$Solutions = $this->Solutions;
+$Orderid = $this->Orderid;
+$Casenumber = $this->Casenumber;
+$Teamviewerid = $this->Teamviewerid;
+$Calldate = $this->Calldate;
+$Salesagent = $this->Salesagent;
+$PaymentGateway = $this->PaymentGateway;
+$Center = $this->Center;
+
+
+?>
+
+<style>
+select { width:120px; }
+</style>
+
+<script type="text/javascript">
+	window.onload = function(){
+		new JsDatePick({
+			useMode:2,
+			target:"DateFrom",
+			dateFormat:"%Y-%m-%d"
+		});
+		
+		new JsDatePick({
+			useMode:2,
+			target:"DateTo",
+			dateFormat:"%Y-%m-%d"
+		});
+		
+	/*	new JsDatePick({
+			useMode:2,
+			target:"Calldate",
+			dateFormat:"%Y-%m-%d"
+		});*/
+		
+	};
+</script>	
+
+<script type="text/javascript" language="javascript">
+
+function showDetails(str)
+{
+//alert(str);
+var xmlhttp;
+if (str.length==0)
+  {
+  document.getElementById("sdetails").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("sdetails").innerHTML=xmlhttp.responseText;
+    }
+  }
+ 
+xmlhttp.open("GET","<?php echo SITE_URL_PUBLIC_P; ?>main/users/getuserdetails/customerid/"+str,true);
+xmlhttp.send();
+}
+
+</script>
+
+
+<style type="text/css" title="currentStyle">
+@import "<?php echo SITE_URL_ALLFILES; ?>media/css/demo_page.css";
+@import "<?php echo SITE_URL_ALLFILES; ?>media/css/demo_table.css";
+</style>
+<script type="text/javascript" language="javascript" src="<?php echo SITE_URL_ALLFILES; ?>media/js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="<?php echo SITE_URL_ALLFILES; ?>media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+$('#userreport1').dataTable();
+} );
+</script>
+
+<style>
+.dataTables_filter {
+    text-align: left;
+    width: 60%;
+}
+
+.dataTables_paginate {
+	float: left;
+	text-align: left;
+	width: 45%;
+}
+
+.display{ border:1px solid #15163d;}
+.display th{ background: url(<?php echo imagepathrestriction(SITE_PATH_All_Files.'\images\thbg.jpg'); ?>); background-repeat:repeat-x; font-family:Arial, Helvetica, sans-serif; color:#fff; font-size:12px; height:50px;
+background-size:80px 60px;
+}
+
+</style>
+
+<form action="http://www.askpcexperts.com/rpt/test.php" target="_blank" method="post">
+<table cellpadding="5" cellspacing="2" class="procss_frm">
+ <tr>
+   <td colspan="2"><h3>Advance Search</h3></td>
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+ </tr>
+ 
+ <tr>
+ <td>Date from <br /> <input type="text" name="DateFrom" id="DateFrom" class="p_input" style="width:80px;" value="<?php echo $this->DateFrom; ?>" /><img src="<?php echo SITE_URL_ALLFILES.'images/calendar_icon1.png'; ?>" height="15" width="20" onclick="javascript:document.getElementById('DateFrom').click(true);document.getElementById('DateFrom').click(true);" style="cursor:pointer;" /></td>
+ <td>Date to <br /> <input type="text" name="DateTo" id="DateTo" style="width:80px;"  class="p_input" value="<?php echo $this->DateTo; ?>" /><img src="<?php echo SITE_URL_ALLFILES.'images/calendar_icon1.png'; ?>" height="15" width="20" onclick="javascript:document.getElementById('DateTo').click(true);document.getElementById('DateTo').click(true);" style="cursor:pointer;" /></td>
+ <td> Name <br /> <input type="text" name="FirstName" class="p_input" value="<?php echo $this->FirstName; ?>" /></td>
+	<td>Phone Number <br /> <input type="text" name="PhoneNumber" class="p_input" value="<?php echo $this->PhoneNumber; ?>" /></td>
+ </tr>
+ 
+ <tr>
+	<td>Email <br /> <input type="text" name="Email" class="p_input" value="<?php echo $this->Email; ?>" /></td>
+	<td>Process  <br />  
+	<select name="Processid" class="p_input_s">
+	<option value="">Select</option>
+ <?php
+ foreach($this->processes as $hh)
+ {
+ ?>
+	<option <?php if($this->Processid==$hh->getId()) { ?> selected="selected" <?php } ?> value="<?php echo $hh->getId(); ?>"><?php echo $hh->getName(); ?></option>
+<?php } ?>
+	</select>
+	</td>
+	
+	<td>Calltype<br /> <select name="Calltype" class="p_input_s">
+<option value="">Select</option>
+<option <?php if($this->Calltype=="1") { ?> selected="selected" <?php } ?> value="1">Sales</option>
+<option <?php if($this->Calltype=="2") { ?> selected="selected" <?php } ?>  value="2">Support</option>
+<option <?php if($this->Calltype=="3") { ?> selected="selected" <?php } ?>  value="3">Inquiry</option>
+</select>
+	</td>
+	<td>Disposition <br /> <select name="Disposition" class="p_input_s">
+	<option value="">Select</option>
+<option  <?php if($this->Disposition=="1") { ?> selected="selected" <?php } ?> value="1">Sale</option>
+<option  <?php if($this->Disposition=="2") { ?> selected="selected" <?php } ?> value="2">No Sale</option>
+<option  <?php if($this->Disposition=="3") { ?> selected="selected" <?php } ?> value="3">Wrong Number</option>
+<option  <?php if($this->Disposition=="4") { ?> selected="selected" <?php } ?> value="4">No Answer</option>
+<option  <?php if($this->Disposition=="5") { ?> selected="selected" <?php } ?> value="5">Promise to Buy</option>
+<option  <?php if($this->Disposition=="6") { ?> selected="selected" <?php } ?> value="6">Refund Request-Product</option>
+<option  <?php if($this->Disposition=="7") { ?> selected="selected" <?php } ?> value="7">Request- Subscription</option>
+</select>
+	</td>
+	
+ </tr>
+ 
+  <tr>
+	
+	<td>Plan <br />
+	<select name="Planid" class="p_input_s">
+		<option value="">Select</option>
+		<?php
+		 foreach($this->processplanlist as $hhh)
+		 {
+		?>
+				<option <?php if($this->Planid==$hhh->getId()) { ?> selected="selected" <?php } ?>  value="<?php echo $hhh->getId(); ?>"><?php echo $hhh->getTitle();
+					foreach($this->processes as $hh)
+           {
+			if($hh->getId()==$hhh->getProcessId())
+			 {
+			   echo ' ( '.$hh->getName().' )';
+			 }
+			}
+			
+				 ?></option>
+		<?php } ?>
+	</select>
+	</td>
+	<td>Sales Amount <br /> <input type="text" name="Salesamount" class="p_input" value="<?php echo $this->Salesamount; ?>" /></td>
+
+
+	<td>Order Id <br /> <input type="text" name="Orderid" class="p_input" value="<?php echo $this->Orderid; ?>" /></td>
+	<td>Case Number <br /> <input type="text" name="Casenumber" class="p_input" value="<?php echo $this->Casenumber; ?>" /></td>
+	
+ </tr>
+ 
+   <tr>
+
+	<td>Team Viewer Id<br /> <input type="text" name="Teamviewerid" class="p_input" value="<?php echo $this->Teamviewerid; ?>" /></td>
+
+<td>Sales Agent <br /> <select name="Salesagent" class="p_input_s">
+		<option value="">Select</option>
+	<?php 
+	foreach($this->users as $vvv)
+	 {
+	?>
+	<option <?php if($this->Salesagent==$vvv->getId()) { ?> selected="selected" <?php } ?> value="<?php echo $vvv->getId(); ?>"><?php echo $vvv->getName().' ( '.$vvv->getUsername().' ) '; ?></option>
+	<?php
+	}
+	?>
+	</select>
+	</td>
+	<td>Payment Gateway <br /> <select name="PaymentGateway" class="p_input_s">
+	<option value="">Select</option>
+	<option <?php if($this->PaymentGateway=="1") { ?> selected="selected" <?php } ?> value="1">Avangate</option>
+	<option <?php if($this->PaymentGateway=="2") { ?> selected="selected" <?php } ?> value="2">Safecart</option>
+	<option <?php if($this->PaymentGateway=="3") { ?> selected="selected" <?php } ?> value="3">Clever Bridge</option>
+	</select>
+	</select>
+	</td>
+	
+	<td>
+  Center <br />
+<select name="Center" class="p_input_s">
+<option value="">Select</option>
+<option <?php if($this->Center==1) { ?> selected="selected" <?php } ?> value="1">Noida</option>
+<option <?php if($this->Center==2) { ?> selected="selected" <?php } ?>  value="2">Jaipur</option>
+</select>
+	</td>
+	
+	
+	</tr>
+	
+	
+ 
+ <tr>
+  <td colspan="3"><input type="submit" name="bsubmit" value="Search"  class="buttn"  /></td>
+  <td>&nbsp;</td>
+ </tr>
+</table>
+</form>
+<div style="padding:20px; width:820px; padding-right:0px;">
+
+<div style="font-family:Arial, Helvetica, sans-serif; font-size:18px; text-align:right; color:#232464;"><a style="font-family:Arial, Helvetica, sans-serif; font-size:18px; text-align:right; color:#232464;" href="<?php echo $this->url(array('module'=>'main','controller'=>'users','action'=>'userreport','export'=>'1','DateFrom' => "$DateFrom",
+'DateTo' => "$DateTo",
+'FirstName' => "$FirstName",
+'MiddleName' => "$MiddleName",
+'LastName' => "$LastName",
+'PhoneNumber' => "$PhoneNumber",
+'Email' => "$Email",		
+'Processid' => "$Processid",
+'bsubmit' => "$bsubmit",
+'Calltype' => "$Calltype",
+'Disposition' => "$Disposition",
+'Planid' => "$Planid",
+'Salesamount' => "$Salesamount",
+'Issues' => "$Issues",
+'Solutions' => "$Solutions",
+'Orderid' => "$Orderid",
+'Casenumber' => "$Casenumber",
+'Teamviewerid' => "$Teamviewerid",
+'Calldate' => "$Calldate",
+'Salesagent' => "$Salesagent",
+'PaymentGateway' => "$PaymentGateway",'Center'=>"$Center",'bsubmit'=>"$bsubmit")); ?>">Customer Data Report</a></div>
+
+</div>
+
+<div id="dt_example">
+<div style="width:860px;overflow-x:scroll;">
+		<div id="container">
+			<div id="demo">
+			<!-- class="display" -->
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="userreport1" width="100%" style="text-align:center;">
+	<thead>
+ <tr bgcolor="#CCCCCC">
+   <th>#</th>
+   <th>Date</th>
+   <th>Time</th>
+   <th>Customer name</th>
+   <th>Case number</th>
+   <th>Call Type</th>
+   <th>Disposition</th>
+   <th>Plan name</th>
+   <th>Sales price</th>
+   <th>Order id</th>
+   <th>Login Agent User</th>
+   <th>Sales Agent</th>
+   <!--<th>Assigned to</th>-->
+   <th>Campaign</th>
+   <th>Time</th>
+   <th>Team Viewer ID</th>
+   <th>Assigned To</th>
+   <th>Comments</th>
+   <th>Payment Gateway</th>
+   <th>Center</th>
+ </tr>
+	</thead>
+	
+<tbody>
+<?php 
+   $userprocesseslist1 = $this->userprocesseslist; 
+   $userdetails1 = $this->userdetails;
+$sn=1;
+foreach($userdetails1 as $udl)
+ {
+ foreach($userprocesseslist1 as $userprocesseslist)
+{
+ if($udl->Customerid==$userprocesseslist->Id) {
+     $IDdd = $userprocesseslist->Id;
+	} 
+ }
+ if($IDdd!="")
+  {
+?> 
+  <tr>
+   <td><?php echo $sn; ?></td>
+   <td><?php echo date("F j, Y",strtotime($udl->Calldate)); ?></td>
+   <td><?php echo date("H:i:s",strtotime($udl->Calldate)); ?></td>
+   <td><?php
+   
+
+foreach($userprocesseslist1 as $userprocesseslist)
+{
+if($udl->Customerid==$userprocesseslist->Id) {
+
+   echo ucfirst($userprocesseslist->Title).' '.ucfirst($userprocesseslist->Firstname).' '.ucfirst($userprocesseslist->Middlename).' '.ucfirst($userprocesseslist->Lastname);
+   
+ }
+}   
+?>
+</td>
+
+<td><?php echo $udl->Casenumber; ?></td>
+<td><?php 
+$calltype = array('0'=>'Select','1'=>'Sales','2'=>'Support','3'=>'Inquiry');
+ 
+foreach($calltype as $key=>$val)
+{
+	if($key==$udl->Calltype)
+	{
+	  echo $val; 
+	}
+}
+?>
+</td>
+<td><?php
+
+foreach($disposition as $key=>$val)
+			 {
+			   if($key==$udl->Disposition)
+			    {
+			      echo $val; 
+			    }
+			 }
+ ?></td>
+<td><?php 
+$processplanlist = $this->processplanlist;
+foreach($processplanlist as $vvv)
+	 {
+	   if($vvv->Id==$udl->Planid)
+		{
+		 echo $vvv->Title.' ( '.$vvv->Price.' ) '; 
+		}
+	 }
+			 
+?></td>
+<td><?php echo $udl->Salesamount; ?></td>
+<td><?php echo $udl->Orderid; ?></td>
+<td><?php
+$users1 = $this->users; 
+foreach($users1 as $uuu)
+	{
+		if($uuu->Id==$udl->Userid)
+		{
+		  echo $uuu->Name; 
+		  $Center = $uuu->Center;
+		}
+	}
+ ?></td>
+<td><?php echo $udl->Salesagent; ?></td>
+<!--<td><?php //echo $udl->Issues; ?></td>-->
+<td><?php
+
+$processes1 = $this->processes;
+foreach($processes1 as $processes)
+{
+	if($processes->Id==$udl->Processid)
+	{
+		echo $processes->Name;
+	}
+}
+?></td>
+<td><?php echo date("H:i:s",$udl->Starttime); ?></td>
+<td><?php echo $udl->Teamviewerid; ?></td>
+<td><?php echo $udl->Issues; ?></td>
+<td><?php echo $udl->Solutions; ?></td>
+<td><?php 
+     foreach($paymentgateway as $key=>$val)
+				    {
+					 if($key==$udl->PaymentGateway)
+					  {
+					     echo $val; 
+					  }
+					}
+					
+ ?></td>
+
+<td><?php if($Center=="1") { echo 'Noida'; } elseif($Center=="2") { echo 'Jaipur';  } ?></td>
+   </tr>
+ 
+
+ <?php
+ $sn++;
+ }
+  }
+ ?>
+	</tbody> 
+</table>
+			</div>
+			<div class="spacer"></div>
+		</div>
+</div>
+</div>		
+
+<div id="sdetails" style="position:absolute;margin-top:-150px;margin-left:-250px;">
+</div>

@@ -1,0 +1,14 @@
+ErrorDocument 404 http://www.databagg.com/index.php
+
+
+AddType application/x-httpd-php53 .php .php3 .html .htm
+
+#RewriteEngine on
+
+Options +FollowSymlinks
+
+RewriteEngine on
+
+rewritecond %{http_host} ^www.databagg.com [nc]
+
+rewriterule ^(.*)$ http://www.databagg.com/$1 [r=301,nc]

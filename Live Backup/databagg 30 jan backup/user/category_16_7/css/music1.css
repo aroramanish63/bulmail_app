@@ -1,0 +1,258 @@
+
+/*main css*/
+@font-face{
+	font-family: PT Sans;
+	src:url(../PTS55F.ttf);
+	
+}
+
+.music_pattern{
+	background:#ffffff url(../image/pattern.jpg);
+	font-family: 'PT Sans', sans-serif;
+	overflow:hidden;
+	width:575px;
+	border: 1px solid #a6a6a6;
+	margin: 0 auto;
+	padding:8px 0 8px 0;
+	text-align: center;
+	-webkit-box-shadow: #666 0px 2px 5px;
+	-moz-box-shadow: #666 0px 2px 5px;
+	box-shadow: #666 0px 2px 5px;
+	
+	position:relative;
+	behavior: url(PIE.htc);
+	
+}
+.music_pattern h1{
+	font-size:33px;
+	text-align:center;
+	 font-family: 'geoslab703_md_btbold';
+	width:100%;	
+	color:#2399ba;
+	letter-spacing:-0.5px;
+	margin:0;
+	padding:0;
+
+}
+.music_pattern h1 span{
+	color:#a4bc29;}
+.music_close{
+	width:11px; 
+	height:12px;
+	position:absolute;
+	top:4px;
+	right:12px;
+}
+.music_pattern h6{
+	font-size:12px;
+	width:100%;
+	color:#2399ba;
+	text-align:left;
+	font-family:PT Sans;
+	padding:0 0 0 15px;
+	position:relative;
+	top:-10px;
+	left:0;
+	line-height:normal;
+	font-weight:normal;
+}
+.music_pattern p{
+	font-size:13px;
+	color:#666666;
+	text-align:left;
+	font-family:PT Sans;
+	padding:0 0 0 0;
+	line-height:1;
+	font-weight:normal;
+	float:left;
+	letter-spacing:-.01em;
+	
+	
+}
+.fleft, .fright{ overflow:hidden; display:block;}
+.fleft{float:left;}
+.fright{float:right;}
+.width{ width:100%;}
+
+.music_pattern .pad-15{
+	padding: 0 0 0 15px;}
+.music_pattern .mar-8{
+		margin:-8px 0 0 0;}
+.music_pattern .select_box{
+	width:75px;
+	height:20px;
+	 
+	border:1px solid #afafaf;
+	background:#e2e1e1;
+	margin: 0 5px;
+}
+.music_pattern .search_box{
+	width:125px;
+	height:19px;	 
+	border:1px solid #afafaf;
+	background:#e2e1e1;
+	margin: 0 5px;
+}
+.music_pattern .select_box:focus{
+	 border:1px solid #2399ba;
+	-moz-boz-shadow: 0 2px 8px #2399ba;
+	-webkit-box-sadow: 0 2px 8px #2399ba;
+	box-shadow: 0 2px 8px #2399ba;
+	color:#9bb31d;
+	behavior:url(PIE.htc);
+	position:relative;
+}
+.music_pattern .search_box:focus{
+	
+	border:1px solid #2399ba;
+	-moz-boz-shadow: 0 2px 8px #2399ba;
+	-webkit-box-sadow: 0 2px 8px #2399ba;
+	box-shadow: 0 2px 8px #2399ba;
+	color:#9bb31d;
+	
+	behavior:url(PIE.htc);
+	position:relative;
+}
+.music_pattern .save_y{
+	width:45px; height:17px; 
+	background:#d0c009;
+	border:1px solid #978d15;
+	text-align:center;
+	padding:3px 0 0 0;
+	color:#555454;
+	font-family:PT Sans;
+	font-size:13px;
+}
+.music_pattern .save_y:hover
+{
+    color: #fff;
+    cursor: pointer;
+}
+.music_pattern .delete_b{
+	width:45px; height:17px; 
+	background:#2399ba;
+	border:1px solid #167d9a;
+	text-align:center;
+	margin-left:5px;
+	padding:3px 0 0 0;
+	color:#ffffff;
+	font-family:PT Sans;
+	font-size:13px;
+
+}
+.music_pattern .delete_b:hover
+{
+     color: #75d0ea;
+    cursor: pointer;
+}
+/*Image Galley*/
+.image_gallery{
+	width:60px; height:57px; background:#03899f; border:1px solid #c; text-align:center; margin:5px 13px; }	
+.image_gallery img{
+	width:52px ; height:50px; margin-top:4px;}
+p.image_name{
+	height:50px; padding:20px 0 0 0; color:#2399ba; }
+	
+		/* - Tabs */
+	
+#import ul.tabs {
+    display:inline-block;
+	width:100%;
+	 margin: 10px 0 0 0;
+    padding: 0 0 0 12px;
+	border-bottom:1px solid #2399ba;
+	height:27px;
+   }
+#import ul.tabs li {
+    display: inline-block; height:23px;  margin-bottom: -1px; float:left; list-style:none; }
+#import ul.tabs li a {
+    display: block; 
+    text-decoration: none;
+	line-height: 2em;
+    color: #626262; 
+    padding: 0 15px; 
+    margin: 0 3px 0 0 ;
+    background: #b5dae5;
+	border:1px solid #2399ba;
+    font-size: 13px;
+	font-family:PT Sans;
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius:  6px 6px 0 0;
+	border-radius:  6px 6px 0 0;
+	position:relative;
+	behavior: url(PIE.htc);
+	
+	}
+#import ul.tabs li a:hover{color: #199bbf;}
+#import ul.tabs li.active a{
+	background: #d6eff7;
+	position: relative;
+border:1px solid #2399ba;
+    font-size: 13px;
+	font-family:PT Sans;
+	color:#199bbf;
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius:  6px 6px 0 0;
+	border-radius:  6px 6px 0 0;
+	position:relative;
+	behavior: url(PIE.htc); 
+	
+	
+	}
+
+#import .tab_container { margin:0; float:left; display: block; text-align:left; padding: 17px 12px 0;}
+
+.mar22-12{margin:22px 0 12px 0;} .mar8{margin:8px 0 0 0;} 
+#import .tab_container p{
+	 font-size:14px; font-family:PT Sans;  line-height:1.3; color:#666666; font-weight:normal;}
+#import .tab_container label{
+	font-size:13px; font-family:Pt Sans; color:#199bbf; display:block; padding:5px 0 5px 0;}	
+#import .tab_container .gmail_input{display:block; width:425px; font-size:13px; font-family:PT Sans; height:26px; color:#666666;  border:1px solid #bebebe;}
+#import .tab_container .submit{
+	width:60px; height:25px;
+	background:#d0c009;
+	border:1px solid #978d15;
+	text-align:center;
+	padding:0 0 0 0;
+	margin-top:15px;
+	color:#555454;
+	font-family:PT Sans;
+	font-size:13px;
+	cursor:pointer;
+}
+#import .tab_container .cancel{
+	width:60px; height:25px;
+	background:#2399ba;
+	border:1px solid #167d9a;
+	text-align:center;
+	margin-left:5px;
+	margin-top:15px;
+	padding:0 0 0 0;
+	color:#ffffff;
+	font-family:PT Sans;
+	font-size:13px;
+	cursor:pointer;
+}
+#import .tab_container .cancel:hover{color: #199bbf;background: #d6eff7; }
+#import .tab_container .submit:hover{color: #199bbf; background: #d6eff7;}
+
+/*-------------------------------18 April 2013 ---------------------------------------------------------*/
+.rounded_box {
+	display:block;
+	
+	 width:625px;
+	 height: auto;
+	  margin-bottom: 1em;
+	   padding-top:10px;
+	   background-color: #FFFFFF;
+	     border-radius: 5px 5px 5px 5px;
+		 box-shadow: 0 0 3px #787878;
+	
+	 }
+.music_pattern form a { color:#f00; text-decoration:none;}
+.music_pattern form a:hover { color:#88c228;}
+.grey_bg { width:100%; background:url(../images/greybg.jpg) repeat-x; height:55px; margin-bottom:15px; }
+.file_content{ width:1000px; margin:0 auto;}
+.file_name{ width:auto; float:left; color:#333;  font-family: 'geoslab703_md_btbold'; font-size:26px;}
+.file_name span { /*font-family: 'PT Sans', sans-serif;*/ font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#505050;}
+.right-icon{ float:right; width:auto; padding-top:10px;}

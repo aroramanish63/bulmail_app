@@ -1,0 +1,172 @@
+<?php
+
+if(isset($this->users))
+ {
+   $datas = $this->users;
+   $datass = $datas[0];
+	$Id = $datass['Id'];
+	$Name = $datass['Name'];
+	$Username = $datass['Username'];
+	$Password = $datass['Password'];
+	$UserType = $datass['UserType'];
+	$UserTypeTT = $datass['UserTypeTT'];
+	$ReportTo = $datass['ReportTo'];
+	$Center = $datass['Center'];
+	$IsActive = $datass['IsActive'];
+ }
+?>
+<script>
+ function validate()
+  {
+    if(document.getElementById('Name').value=="")
+	 {
+	  alert('This field cannot be empty .');
+	  document.getElementById('Name').focus();
+	  return false;
+	 }
+	 
+	     if(document.getElementById('Username').value=="")
+	 {
+	  alert('This field cannot be empty .');
+	  document.getElementById('Username').focus();
+	  return false;
+	 }
+	 
+	     if(document.getElementById('Password').value=="")
+	 {
+	  alert('This field cannot be empty .');
+	  document.getElementById('Password').focus();
+	  return false;
+	 }
+	 
+	 if(document.getElementById('conPassword').value!=document.getElementById('Password').value)
+	 {
+	  alert('Password donot match .');
+	  document.getElementById('conPassword').focus();
+	  return false;
+	 }
+	 
+	     if(document.getElementById('UserType').value=="")
+	 {
+	  alert('This field cannot be empty .');
+	  document.getElementById('UserType').focus();
+	  return false;
+	 }
+	 
+	     if(document.getElementById('UserTypeTT').value=="")
+	 {
+	  alert('This field cannot be empty .');
+	  document.getElementById('UserTypeTT').focus();
+	  return false;
+	 }
+	 
+	 	     if(document.getElementById('ReportTo').value=="")
+	 {
+	  alert('This field cannot be UserTypeTT .');
+	  document.getElementById('ReportTo').focus();
+	  return false;
+	 }
+	 
+	 	     if(document.getElementById('Center').value=="")
+	 {
+	  alert('This field cannot be empty .');
+	  document.getElementById('Center').focus();
+	  return false;
+	 }
+	 
+	 return true;
+  }
+</script>
+
+
+  <div class="user-f "><h2>User</h2></div>
+    	<div class="frmde">
+		
+<form action="<?php echo $this->actionc; ?>" method="post" onsubmit="return validate();">
+<input type="hidden" id="Id" name="Id" value="<?php echo $Id; ?>" />
+<table width="50%" border="0" cellpadding="5" cellspacing="0" class="user-table">
+<tr>
+ <th>Name</th>
+ <td><input type="text" id="Name" name="Name" value="<?php echo $Name; ?>"  class="fst_box"  /></td>
+</tr> 
+
+<tr>
+ <th>Username</th>
+ <td><input type="text" id="Username" name="Username" value="<?php echo $Username; ?>" class="fst_box"  /></td>
+</tr> 
+
+<tr>
+ <th>Password</th>
+ <td><input type="password" id="Password" name="Password" value="<?php echo $Password; ?>" class="fst_box"  /></td>
+</tr> 
+
+<tr>
+ <th>Confirm Password</th>
+ <td><input type="password" id="conPassword" name="conPassword" value="<?php echo $Password; ?>"  class="fst_box"  /></td>
+</tr> 
+
+<tr>
+ <th>Role Type</th>
+ <td>
+ <select id="UserType" name="UserType" class="fst_box" >
+ <option value="">Select</option>
+ <option <?php if($UserType=="0") { ?> selected="selected" <?php } ?> value="0">Super Admin</option>
+ <option <?php if($UserType=="1") { ?> selected="selected" <?php } ?> value="1">Admin</option>
+ <option <?php if($UserType=="2") { ?> selected="selected" <?php } ?> value="2">User</option>
+ <option <?php if($UserType=="3") { ?> selected="selected" <?php } ?> value="3">Supervisor</option>
+ </select>
+ </td>
+</tr> 
+
+<tr>
+ <th>User Type</th>
+ <td>
+ <select id="UserTypeTT" name="UserTypeTT" class="fst_box" >
+ <option value="">Select</option>
+ <option <?php if($UserTypeTT=="1") { ?> selected="selected" <?php } ?> value="1">Technical Support</option>
+ <option <?php if($UserTypeTT=="2") { ?> selected="selected" <?php } ?> value="2">Technical Sales</option>
+ </select>
+ </td>
+</tr> 
+
+<tr>
+ <th>Report To</th>
+ <td>
+ <select id="ReportTo" name="ReportTo" class="fst_box" >
+ <option value="">Select</option>
+ <?php
+ foreach($this->userlistsort as $userlistsort)
+  {
+ ?>
+ <option <?php if($ReportTo==$userlistsort['Id']) { ?> selected="selected" <?php } ?> value="<?php echo $userlistsort['Id']; ?>"><?php echo $userlistsort['Name'].' ( '.$userlistsort['Username'].' )'; ?></option>
+<?php } ?>
+ </select>
+ </td>
+</tr> 
+
+
+
+<tr>
+ <th>Center</th>
+ <td>
+ <select id="Center" name="Center" class="fst_box" >
+ <option value="">Select</option>
+ <option <?php if($Center=="1") { ?> selected="selected" <?php } ?> value="1">Noida</option>
+ <option <?php if($Center=="2") { ?> selected="selected" <?php } ?> value="2">Jaipur</option>
+ </select>
+ </td>
+</tr> 
+
+<tr>
+ <th>IsActive</th>
+ <td><input type="checkbox" <?php if($IsActive=="1") { ?> checked="checked" <?php } ?>   id="IsActive" name="IsActive" value="1" /></td>
+</tr> 
+
+
+<tr>
+  <td colspan="2" align="center"><input type="submit" id="bsubmit" name="bsubmit" value="Submit"  class="buttn"  /></td> 
+</tr>
+</table>
+</form>
+
+</div>

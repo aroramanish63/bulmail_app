@@ -1,0 +1,1 @@
+[16-Oct-2012 16:48:06 UTC] PHP Fatal error:  Class 'Zend_Application_Module_Bootstrap' not found in /home/askpcexp/public_html/mycrm/application/modules/main/Bootstrap.php on line 10

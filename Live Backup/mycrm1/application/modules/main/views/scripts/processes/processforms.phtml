@@ -1,0 +1,343 @@
+<style>
+#middlename-label{ display:none; }
+#lastname-label{ display:none; }
+h3{font-family:arial;}
+
+#middlename{ display:none; }
+#lastname{ display:none; }
+</style>
+
+<?php
+$calltype = array(''=>'Select','1'=>'Sales','2'=>'Support','3'=>'Inquiry');
+$disposition = array(''=>'Select','1'=>'Sale','2'=>'No Sale','3'=>'Wrong Number','4'=>'No Answer','5'=>'Promise to Buy','6'=>'Refund Request-Product','7'=>'Request- Subscription');
+
+if(isset($this->searchresult))
+ {
+	$searchresult = $this->searchresult;
+	$this->form->userprocessdataid->setValue($searchresult['Id']);
+	$this->form->title->setValue($searchresult['Title']);
+	$this->form->firstname->setValue($searchresult['Firstname']);
+	$this->form->middlename->setValue($searchresult['Middlename']);
+	$this->form->lastname->setValue($searchresult['Lastname']);
+	$this->form->phonenumber->setValue($searchresult['Phonenumber']);
+	$this->form->email->setValue($searchresult['Email']);
+	$this->form->othersdetails->setValue($searchresult['Othersdetails']);
+	
+
+} 
+
+
+
+$this->form->userid->setValue($_SESSION['userid']);
+
+echo "<style> #orderid-label{ display:none; } </style>";
+$this->form->orderid->setAttribs(array('style'=>'display:none'));
+
+//[_value:protected]
+//echo "<pre>";
+//print_r($this->form->processid->getValue());
+echo "</pre>";
+//echo $this->getRequest()->getParam('processid');
+?>
+<style>
+.errors{
+color:#FF0000;
+}
+</style>
+<script type="text/javascript" language="javascript">
+
+
+
+function showamount(strv)
+ {
+  
+    if(strv==1)
+	 {
+	 
+	 document.getElementById('salesamount-label').innerHTML = 'Discount (Sales)';
+	  // document.getElementById('salesamount').type='text'; 
+	   //document.getElementById('salesamount').placeholder='Amount';
+	   document.getElementById('salesamount').style.display='block';
+	   //document.getElementById('salesamount').style.width='150px';
+	   
+	   document.getElementById('planid-label').style.display='block';
+	   document.getElementById('planid').style.display='block';
+	   
+	   	   document.getElementById('orderid-label').style.display='block';
+	   document.getElementById('orderid').style.display='block';
+	 }
+	 else
+	 {
+	   document.getElementById('salesamount').style.display='none';
+	   document.getElementById('salesamount-label').innerHTML = '';
+	   
+	   document.getElementById('planid-label').style.display='none';
+	   document.getElementById('planid').style.display='none';
+	 }
+ }
+ 
+ 
+ 
+ 
+function AddItem(Text,Value)
+{
+	var opt = document.createElement("option");
+	document.getElementById("planid").options.add(opt);
+	opt.text = Text;
+	opt.value = Value;	   
+}
+
+	
+ function sortplans(srrrr)
+{
+
+
+var xmlhttp;
+
+
+if (srrrr.length==0)
+  { 
+   document.getElementById("planiddd").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+	
+	document.getElementById('planid').options.length = 0;
+    AddItem('Select','');
+
+	//document.getElementById("planiddd").innerHTML = xmlhttp.responseText;
+	
+       var valss = xmlhttp.responseText;
+      var myObject = eval('(' + valss + ')');
+       for(var ii=0;ii<myObject.length;ii++)
+	    {
+	      AddItem(myObject[ii].Title,myObject[ii].Val);
+       }
+	   
+
+
+	}
+  }
+ 
+xmlhttp.open("GET",'<?php echo SITE_URL_PUBLIC_P; ?>main/processes/getplans/processiddd/'+srrrr,true);
+xmlhttp.send();
+}
+
+
+</script>
+
+<style>
+#submit-label { display:none; }
+.element-group { border:1px solid #cccccc; }
+
+#planid-label { display:none; }
+</style>
+
+
+
+<?php
+/* $tt = '<div id="sst"></div>';
+ $tt = htmlentities($tt);
+ echo $tt;
+ if($tt=='Nishith')
+  {
+    echo 'Yes';
+  }
+  else
+  {
+   echo 'No';
+  }*/
+ ?>
+ 
+<div id="formbody">
+<h3>Process Form</h3>
+<div style="text-align:left;width:100%; padding-top:0px;">
+	<div style="height:30px; width:400px; border:1px solid #cccccc;padding:8px 0 0 5px;">
+	<form action="" method="post" id="sssearch" name="sssearch">
+	<select id="searchby" name="searchby" class="fst_box">
+	<option value="1">Search By</option>
+	<option <?php if($this->searchby==1) { ?> selected="selected" <?php } ?> value="1">Email</option>
+	<option <?php if($this->searchby==2) { ?> selected="selected" <?php } ?> value="2">Phone Number</option>
+	</select>
+	<input type="text"  class="fst_box" id="searchtext"  name="searchtext" value="<?php echo $this->searchtext; ?>" placeholder="Search Text" />
+	<input type="submit" id="bsearch" name="bsearch" value="Search" class="button" />
+	
+	<em><?php echo $this->error; ?></em>
+	</form>
+	</div>
+	
+</div>
+
+
+<?php
+
+if($this->form->processid->getValue()!="")
+{
+if($this->form->disposition->getValue()=="1") {
+?>
+<style>
+#planid-label { display:block; }
+</style>
+<?php
+//$this->form->salesamount->setAttrib("type", "text");
+$this->form->salesamount->setLabel('Discount (Sales)');
+$this->form->salesamount->setAttribs(array('style'=>'display:block'));
+
+$this->form->planid->setAttribs(array('style'=>'display:block'));
+$this->form->planid->setLabel('Plan')->setAttribs(array('style'=>'display:block'));
+//$this->form->planid->setMultiOptions(array(''=>'Select'));	
+$arrPlanlist = array(''=>'Select');
+foreach($this->processplanlist as $vvv)
+{
+  if($this->form->processid->getValue()==$vvv->ProcessId)
+  {
+   $arrPlanlist[$vvv->Id] = $vvv->Title.' ( '.$vvv->Price.' ) ';  
+  }
+}
+$this->form->planid->setMultiOptions($arrPlanlist);	
+
+echo "<style> #orderid-label{ display:block; } </style>";
+$this->form->orderid->setAttribs(array('style'=>'display:block'));
+
+ }
+}
+?>
+
+<?php
+/*$this->form->setAction($this->url());*/
+echo $this->form;
+?>
+</div>
+
+
+<?php 
+if(isset($this->msg))
+ {
+?>
+<script>
+ alert("<?php echo $this->msg; ?>");
+ window.location.href = window.location.href;
+</script>
+<?php } ?>
+
+
+
+<?php
+if($searchresult['Id']!="")
+ {
+ ?>
+<div style="margin-top:-550px;margin-left:500px;position:absolute;">
+<a href="#" onClick="javascript:document.getElementById('tableshowid').focus(true);document.getElementById('tableshowid').style.display='block';document.getElementById('formbody').style.opacity='0.1';">
+<img src="<?php echo imagepathrestriction(SITE_PATH_All_Files.'\images\history.png'); ?>" height="50" width="50" />
+</a>
+</div>
+<?php } ?>
+
+
+
+
+<style type="text/css" title="currentStyle">
+@import "<?php echo SITE_URL_ALLFILES; ?>media/css/demo_page.css";
+@import "<?php echo SITE_URL_ALLFILES; ?>media/css/demo_table.css";
+</style>
+<script type="text/javascript" language="javascript" src="<?php echo SITE_URL_ALLFILES; ?>media/js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="<?php echo SITE_URL_ALLFILES; ?>media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+$('#userreport2').dataTable();
+} );
+</script>
+
+<?php
+if($searchresult['Id']!="")
+ {
+ ?>
+<div  id="tableshowid" style="display:none;border:1px solid #cccccc;position:absolute;margin-top:-650px;margin-left:-34px;z-index:999;background:#ffffff;">
+<div style="text-align:right;padding:5px;">
+ <a href="#" onClick="javascript:document.getElementById('tableshowid').style.display='none';document.getElementById('formbody').style.opacity='1';" style="text-decoration:none;font-size:18px;background: none repeat scroll 0 0 #FFFFFF;border: 1px solid #888888;border-radius: 7px 7px 7px 7px;color: #222222;margin: 0 5px 0 0;padding: 3px 4px;">Close &nbsp; &times;</a>
+</div>
+
+<div id="dt_example">
+<div>
+		<div id="container">
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="userreport2" width="100%" style="text-align:center;">
+<thead>
+	 <tr bgcolor="#cccccc">
+		<th>#</th>
+		<th>Process</th>
+		<th>Call <br />Type</th>
+		<th>Amount (Sales)</th>
+		<th>Assigned To</th>
+		<th>Issues</th>
+		<th>Sales Agent</th>
+		<th>Call <br />Date</th>
+		<th>Start <br />Time</th>
+		<th>End <br />Time</th>
+		<th>Time <br />Difference (sec)</th>
+      </tr>
+	  	</thead>
+	
+<tbody>
+	  <?php $snn1=1; foreach($this->userdetails1 as $udl) {
+	  
+	  if($udl->getCustomerid()==$searchresult['Id']) {
+	   ?>
+	  <tr>
+	  <td><?php echo $snn1; ?></td>
+   <td><?php
+   foreach($this->processes1 as $processes)
+    {
+   if($processes->getId()==$udl->getProcessid())
+    echo $processes->getName(); 
+	}
+	?></td>
+   <td><?php
+   foreach($calltype as $key=>$vals)
+   {
+     if($key==$udl->getCalltype())
+	 {
+       echo $vals;
+     }
+   }
+    ?></td>
+	 <td><?php echo $udl->getSalesamount(); ?></td>
+   <td><?php echo $udl->getIssues(); ?></td>
+   <td><?php echo $udl->getSolutions(); ?></td>
+   <td><?php
+   foreach($this->users1 as $uuu)
+    {
+	if($uuu->getId()==$udl->getUserid())
+	{
+     echo $uuu->getName(); 
+    }
+   }
+   ?></td>
+   <td><?php echo $udl->getCalldate(); ?></td>
+   <td><?php echo date("Y-m-d H:i:s",$udl->getStarttime()); ?></td>
+   <td><?php echo date("Y-m-d H:i:s",$udl->getEndtime()); ?></td>
+   <td><?php echo round($udl->getEndtime()-$udl->getStarttime(),3); ?></td>
+ </tr>
+ <?php $snn1++; } } ?>
+		</tbody> 
+</table>
+			</div>
+			<div class="spacer"></div>
+		</div>
+</div>
+</div>	
+	
+	</div>
+<?php } ?>
+
