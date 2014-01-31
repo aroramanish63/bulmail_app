@@ -127,15 +127,17 @@ class AllFunctions extends Db {
          */
 
       function getFlashMessage($style = FALSE) {
-        $returnThis = '';
+        $err_type = '';
+        $msg = '';
         if (isset($_SESSION['alert']['err_type']) && $_SESSION['alert']['err_type'] != '') {
-            if($style){
-                 return '<span class="notification n-'.$_SESSION['alert']['err_type'].'">'.$_SESSION['alert']['msg'].'</span>';
+                $err_type = $_SESSION['alert']['err_type'];
+                $msg = $_SESSION['alert']['msg'];
+                unset($_SESSION['alert']);
+            if($style){                                    
+                 return '<span class="notification n-'.$err_type.'">'.$msg.'</span>';
             }
             else
-               return $_SESSION['alert']['msg'];
-            
-           unset($_SESSION['alert']);
+               return $msg;                       
         }        
     }
     function setAlertMessage($message = array()) {

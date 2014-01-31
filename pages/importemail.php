@@ -12,13 +12,12 @@ $siteConfig->load_class('importFunctions');
     
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(isset($_POST['saveButton']) && !empty($_POST['saveButton'])){        
-        $result = $importFun->importFile();
-        if ($result) {
-             if(!@header('Location:'.SITE_URL.'?page=emails')){
-                    echo '<script type="text/javascript">location.href = "'.SITE_URL.'?page=emails";</script>';
+        
+        $result = $importFun->importFile();      
+             if(!@header('Location:'.SITE_URL.'?page=importemail')){
+                    echo '<script type="text/javascript">location.href = "'.SITE_URL.'?page=importemail";</script>';
                 }                
-                exit();            
-        }    
+                exit();                      
      }
 }
        
@@ -32,7 +31,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                      <h2><span>Import Email Form</span></h2>                        
                      <div class="module-body">
                             <div>
-                                <?php echo $siteConfig->getAlertMessage(TRUE); ?>
+                                <?php echo $importFun->getFlashMessage(TRUE); ?>
                             </div> 
                          <form action="" method="post" enctype="multipart/form-data" name="import_email_form" id="import_email_form">
                             <p>
@@ -63,7 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 </select>
                                <span id="clienterror"></span>
                             </p>
-                            <p>
+<!--                            <p>
                                <label>Select Additional Fields in Excel</label>                              
                                 <div class="multiselect input-short">
                                     <label><input type="checkbox" value="all" name="field_all" id="field_all"/>&nbsp;All Fields</label>
@@ -72,7 +71,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                     <label><input type="checkbox" value="remarks" name="field[]" id="remarks"/>&nbsp;Remarks</label>
                                 </div>                               
                                <span id="clienterror"></span>
-                            </p>
+                            </p>-->
                             <p>
                                <label>Import Excel File</label>
                                 <input id="file_name" name="file_name" type="file" placeholder=" " />
